@@ -5,6 +5,7 @@ import { BsChatRightText } from'react-icons/bs'
 import { BsStar } from'react-icons/bs'
 
 
+
 export default function Home() {
   return (
     <div>
