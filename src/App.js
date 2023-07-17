@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './NavBar';
+import Home from './Home';
+import Contact from './Contact';
+import Main from './Main/Main'; 
 
 function App() {
   return (
