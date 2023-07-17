@@ -1,34 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from './NavBar';
-import Home from './Home';
-import Contact from './Contact';
-import About from './Main/About';
-import Main from './Main/Main'; 
+import Navbar from "./NavBar";
+import Home from "./Home";
+import Contact from "./Contact";
+import About from "./Main/About";
+import Main from "./Main/Main";
 
 function App() {
   return (
     <div className="App">
- <Navbar />
-            <Routes>
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route exact path="/contact">
-                    <Contact />
-                </Route>
-                <Route path="/main">
-                    <Main />
-                </Route>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="*">
-                    <h1>404 not found</h1>
-                </Route>
-            </Routes>
-
+      <Navbar />
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route path="/main" element={<Main />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<h1>404 not found</h1>} />
+      </Routes>
     </div>
   );
 }
