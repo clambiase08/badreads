@@ -6,7 +6,7 @@ import Home from "./Home";
 import Contact from "./Contact";
 import About from "./Main/About";
 import Main from "./Main/Main";
-import Account from "./Account";
+import Account from "./Main/Account";
 
 function App() {
   return (
