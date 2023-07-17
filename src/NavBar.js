@@ -55,7 +55,7 @@ const Box = styled.div`
 `;
 
 const Logo = styled.h2`
-  font-size: 24px;
+  font-size: 42px;
   font-weight: bold;
   text-align: left;
   margin: 0;
