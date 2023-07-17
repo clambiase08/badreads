@@ -12,8 +12,10 @@ export default function NavBar() {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/account">Reviews</NavLink>
         <NavLink to="/account"><HiOutlineUserCircle /></NavLink>
+        <NavLink to="/account">
+          <button>Write a Review</button>
+        </NavLink>
       </nav>
-    
     </div>
   )
 }
