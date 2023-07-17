@@ -1,7 +1,7 @@
 import React from 'react'
 import AvailableBookRow from './AvailableBookRow'
 import MyReviews from './MyReviews'
-import ReviewedBookRow from './ReviewedBookRow'
+import ReviwedBookRow from './ReviwedBookRow'
 import AddReview from './AddReview'
 
 export default function Account() {
