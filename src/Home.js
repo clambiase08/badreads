@@ -10,8 +10,8 @@ export default function Home() {
     <div>
       <h1>Your safe space for really bad books</h1>
       <span>
-        <img src={image2} />
-        <img src={image1} />
+        <img src={image2} alt="stack of books" />
+        <img src={image1} alt="book on table"/>
       </span>
       <div>
         <span>
