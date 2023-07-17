@@ -4,9 +4,11 @@ import { HiOutlineUserCircle } from'react-icons/hi'
 import styled, {css} from'styled-components'
 
 export default function NavBar() {
+
+
   return (
       <PancakeStackLayout>
-        <Box background="#ecf494">
+        <Box color="#ECF494">
         Home of the world's worst books
         </Box>
         <Box>
@@ -44,6 +46,7 @@ const PancakeStackLayout = styled.div`
 `;
 
 const Box = styled.div`
+  background-color: ${props => props.color || '#FFFFFF'};;
   display: grid;
   place-items: center;
   padding: 1rem;
