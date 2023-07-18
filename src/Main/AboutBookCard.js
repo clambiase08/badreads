@@ -1,6 +1,7 @@
 // AboutBookCard.js
 import React from 'react';
 import styled from "styled-components";
+import AvailableBookItem from './AvailableBookItem';
 
 export default function AboutBookCard({ book }) {
   console.log(book);
@@ -38,8 +39,8 @@ width: 15%;
       <h2>{book.volumeInfo.title}</h2>
       <h3>Published: {book.volumeInfo.publishedDate} </h3>
      
-        
-      <BookImage src={book.volumeInfo.imageLinks.smallThumbnail}/>
+      <AvailableBookItem book={book} id={book.id}/>
+      {/* <BookImage src={book.volumeInfo.imageLinks.smallThumbnail}/> */}
     <br/>
       <p>{book.volumeInfo.description}</p>
       </Card>
