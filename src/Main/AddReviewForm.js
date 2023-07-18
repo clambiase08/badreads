@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 import { FaPoop } from "react-icons/fa";
 
-export default function AddReviewForm({ onAddReview }) {
+export default function AddReviewForm({ onAddReview, image }) {
   const initialFormState = {
     review: "",
     tags: [],
     rating: null,
+    image: image,
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
   const [hover, setHover] = useState(null);

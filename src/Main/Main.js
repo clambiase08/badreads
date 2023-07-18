@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import About from "./About";
-import Account from "./Account";
 import { Routes, Route } from "react-router-dom";
-import AddReview from "./AddReview";
 import Contact from "../Contact";
 import Home from "../Home";
+import AccountContainer from "./AccountContainer";
+import Account from "./Account";
+import AddReview from "./AddReview";
 
 export default function Main() {
   const [books, setBooks] = useState([]);
@@ -14,7 +15,7 @@ export default function Main() {
     `)
       .then((res) => res.json())
       .then((BookItem) => setBooks(BookItem.items));
-  }, key);
+  }, [key]);
 
   // console.log(books);
 
@@ -22,10 +23,10 @@ export default function Main() {
     <div>
       <Routes>
         <Route path="/about" element={<About books={books} />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/account" element={<Account books={books} />} />
-        <Route path="/account/:id" element={<AddReview books={books} />} />
-        <Route exact path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/account" element={<AccountContainer books={books} />} />
+          
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
     </div>
