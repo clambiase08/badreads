@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
+import StarRating from "./StarRating";
 
 export default function AddReviewForm() {
   const initialFormState = {
@@ -69,6 +70,7 @@ export default function AddReviewForm() {
             boring
           </label>
         </Group>
+        <StarRating />
         <StyledButton type="submit" disabled={!review}>
           Submit Review
         </StyledButton>
