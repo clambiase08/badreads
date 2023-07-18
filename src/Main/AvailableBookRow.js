@@ -6,10 +6,8 @@ export default function AvailableBookRow({books}) {
     return <div>No available books.</div>;
   }
 
-  console.log(books)
-
   const availableBookItem = books.map(book => {
-    return <AvailableBookItem key={book.id} book={book} />
+    return <AvailableBookItem key={book.id} book={book} id={book.id} />
   })
 
   return (

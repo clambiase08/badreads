@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import AvailableBookRow from './AvailableBookRow'
 import MyReviews from './MyReviews'
 import ReviwedBookRow from './ReviwedBookRow'
@@ -6,13 +6,12 @@ import AddReview from './AddReview'
 
 export default function Account({books}) {
 
-  console.log(books)
 
   return (
     <div>
-      <AvailableBookRow books={books} />
+      <AvailableBookRow books={books}  />
       <ReviwedBookRow books={books} />
-      <AddReview />
+      <AddReview books={books}/>
       <MyReviews />
     </div>
   )
