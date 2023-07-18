@@ -14,7 +14,7 @@ export default function Main() {
     `)
       .then((res) => res.json())
       .then((BookItem) => setBooks(BookItem.items));
-  }, []);
+  }, key);
 
   // console.log(books);
 

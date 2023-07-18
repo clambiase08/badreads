@@ -6,11 +6,10 @@ import { FaPoop } from "react-icons/fa";
 export default function AddReviewForm() {
   const initialFormState = {
     review: "",
-    tags: "",
-    rating: "",
+    tags: [],
+    rating: null,
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
-  // const [newRating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
   function handleSubmit(e) {
@@ -20,14 +19,30 @@ export default function AddReviewForm() {
   }
 
   function handleChange(e) {
-    const name = e.target.name;
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setReviewFormData({ ...reviewFormData, [name]: value });
+    const { name, type, checked, value } = e.target;
+
+    if (type === "checkbox") {
+      const tags = [...reviewFormData.tags];
+
+      if (checked) {
+        tags.push(name);
+      } else {
+        const index = tags.indexOf(name);
+        if (index > -1) {
+          tags.splice(index, 1);
+        }
+      }
+
+      setReviewFormData({ ...reviewFormData, tags });
+    } else if (type === "radio") {
+      setReviewFormData({ ...reviewFormData, [name]: parseInt(value, 10) });
+    } else {
+      setReviewFormData({ ...reviewFormData, [name]: value });
+    }
   }
 
   const { review, tags, rating } = reviewFormData;
-  const checkbox = useCheckboxStore({ defaultValue: [] });
+  const checkbox = useCheckboxStore({ defaultValue: tags });
 
   return (
     <div>
@@ -44,7 +59,7 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
+              checked={tags.includes("bad writing")}
               name="bad writing"
               className="checkbox"
               onChange={handleChange}
@@ -54,7 +69,7 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
+              checked={tags.includes("main character gave me the ick")}
               name="tags"
               className="checkbox"
               onChange={handleChange}
@@ -64,7 +79,7 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
+              checked={tags.includes("boring")}
               name="tags"
               className="checkbox"
               onChange={handleChange}
@@ -82,7 +97,7 @@ export default function AddReviewForm() {
                   name="rating"
                   checked={index === rating}
                   value={index}
-                  onClick={handleChange}
+                  onChange={handleChange}
                 />
                 <FaPoop
                   size={25}
