@@ -7,6 +7,14 @@
             "tags": "Text",
             "rating": "Text",
             "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        {
+            "id": "2",
+            "title": "Book Title",
+            "review": "Text of a book review",
+            "tags": "Text",
+            "rating": "Text",
+            "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         }
     ]
 }

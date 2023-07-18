@@ -16,7 +16,7 @@ export default function Main() {
     .then((BookItem) => setBooks(BookItem.items))
   }, [])
 
-  console.log(books);
+ // console.log(books);
 
   
   return (
