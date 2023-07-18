@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import About from './About';
 import Account from './Account';
+import { Routes, Route } from "react-router-dom";
 
 export default function Main() {
   const [books, setBooks] = useState([]);
@@ -12,10 +13,18 @@ export default function Main() {
     .then((BookItem) => setBooks(BookItem.items))
   }, [])
 
+  console.log(books);
+
   
   return (
     <div>
-     <About books={books} />
+      <Routes>
+        <Route path="/about" element={<About books={books}/>} />
+        {/* <Route exact path="/contact" element={<Contact />} /> */}
+        <Route path="/account" element={<Account books={books}/>} />
+        {/* <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<h1>404 not found</h1>} /> */}
+      </Routes>
     </div>
   );
 }

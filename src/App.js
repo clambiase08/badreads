@@ -14,11 +14,11 @@ function App() {
       <Navbar />
       <Main />
       <Routes>
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route exact path="/contact" element={<Contact />} />
-        <Route path="/account" element={<Account />} />
+        {/* <Route path="/account" element={<Account />} /> */}
         <Route exact path="/" element={<Home />} />
-        <Route path="*" element={<h1>404 not found</h1>} />
+        {/* <Route path="*" element={<h1>404 not found</h1>} /> */}
       </Routes>
     </div>
   );
