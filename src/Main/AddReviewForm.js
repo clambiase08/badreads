@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-import styled from "styled-components"
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 
 export default function AddReviewForm() {
   const initialFormState = {
@@ -9,51 +10,92 @@ export default function AddReviewForm() {
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
 
-
   function handleSubmit(e) {
-      e.preventDefault();
-      console.log(reviewFormData);
-      setReviewFormData(initialFormState);
+    e.preventDefault();
+    console.log(reviewFormData);
+    setReviewFormData(initialFormState);
   }
 
   function handleChange(e) {
-    const {name, value} = e.target;
-    setReviewFormData({...reviewFormData, [name]: value});
+    const name = e.target.name;
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setReviewFormData({ ...reviewFormData, [name]: value });
   }
 
-  const {review, tags, rating} = reviewFormData;
+  const { review, tags, rating } = reviewFormData;
+  const checkbox = useCheckboxStore({ defaultValue: [] });
 
   return (
     <div>
       <StyledForm onSubmit={handleSubmit}>
-            <StyledInput placeholder='Write your review here' type="text" name="review" value={review} onChange={handleChange}/>
-            <StyledLabel>-What made it so bad?-</StyledLabel>
-            <StyledInput type="text" name="tags" value={tags} onChange={handleChange} />
-            <StyledButton type="submit" disabled={!review}>Submit Review</StyledButton>
-        </StyledForm>
+        <StyledInput
+          placeholder="Write your review here"
+          type="text"
+          name="review"
+          value={review}
+          onChange={handleChange}
+        />
+        <Group className="wrapper">
+          <GroupLabel>-What made it so bad?-</GroupLabel>
+          <label className="label">
+            <Checkbox
+              store={checkbox}
+              checked={tags}
+              name="bad writing"
+              className="checkbox"
+              onChange={handleChange}
+            />
+            bad writing
+          </label>
+          <label className="label">
+            <Checkbox
+              store={checkbox}
+              checked={tags}
+              name="tags"
+              className="checkbox"
+              onChange={handleChange}
+            />
+            main character gave me the ick
+          </label>
+          <label className="label">
+            <Checkbox
+              store={checkbox}
+              checked={tags}
+              name="tags"
+              className="checkbox"
+              onChange={handleChange}
+            />
+            boring
+          </label>
+        </Group>
+        <StyledButton type="submit" disabled={!review}>
+          Submit Review
+        </StyledButton>
+      </StyledForm>
     </div>
-  )
+  );
 }
 
-export const StyledForm = styled.form`
+const StyledForm = styled.form`
   background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
-`
+`;
 
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: black;
-`
+`;
 
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-`
+`;
 
 const StyledButton = styled.button`
   background-color: #ffffff;
