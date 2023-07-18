@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 import { FaPoop } from "react-icons/fa";
 
-export default function AddReviewForm() {
+export default function AddReviewForm({ onAddReview }) {
   const initialFormState = {
     review: "",
     tags: [],
@@ -15,6 +15,14 @@ export default function AddReviewForm() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(reviewFormData);
+    fetch("http://localhost:3000/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewFormData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .then((reviewFormData) => onAddReview(reviewFormData));
     setReviewFormData(initialFormState);
   }
 
@@ -70,7 +78,7 @@ export default function AddReviewForm() {
             <Checkbox
               store={checkbox}
               checked={tags.includes("main character gave me the ick")}
-              name="tags"
+              name="main character gave me the ick"
               className="checkbox"
               onChange={handleChange}
             />
@@ -80,7 +88,7 @@ export default function AddReviewForm() {
             <Checkbox
               store={checkbox}
               checked={tags.includes("boring")}
-              name="tags"
+              name="boring"
               className="checkbox"
               onChange={handleChange}
             />
