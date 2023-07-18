@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from'react'
 import {useParams} from "react-router-dom"
 import AddReviewForm from './AddReviewForm'
 
@@ -8,12 +8,13 @@ export default function AddReview({books}) {
   console.log(bookToReview)
 
   if (!bookToReview) {
-    return <div>Book not found</div>;
+    return <div>...Loading</div>;
   }
 
   return (
     <div>
-      <h1>{bookToReview.volumeInfo.title}</h1>
+      <img src={bookToReview.volumeInfo.imageLinks.thumbnail} />
+      <AddReviewForm book={bookToReview} />
     </div>
   )
 }
