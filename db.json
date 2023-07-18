@@ -1,20 +1,36 @@
 {
-    "reviews": [
-        {
-            "id": "1",
-            "title": "Book Title",
-            "review": "Text of a book review",
-            "tags": "Text",
-            "rating": "Text",
-            "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        },
-        {
-            "id": "2",
-            "title": "Book Title",
-            "review": "Text of a book review",
-            "tags": "Text",
-            "rating": "Text",
-            "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        }
-    ]
+  "reviews": [
+    {
+      "review": "testing",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 3,
+      "id": "7E2S28n"
+    },
+    {
+      "review": "testing",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 3,
+      "id": "T_c7WhW"
+    },
+    {
+      "review": "testing",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 3,
+      "id": "5h48akT"
+    },
+    {
+      "review": "try again",
+      "tags": [
+        "main character gave me the ick"
+      ],
+      "rating": 4,
+      "id": "xWmrwk9"
+    }
+  ]
 }

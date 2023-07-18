@@ -1,30 +1,57 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
+import { FaPoop } from "react-icons/fa";
 
-export default function AddReviewForm() {
+export default function AddReviewForm({ onAddReview, image }) {
   const initialFormState = {
     review: "",
-    tags: "",
-    rating: "",
+    tags: [],
+    rating: null,
+    image: image,
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
+  const [hover, setHover] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(reviewFormData);
+    fetch("http://localhost:3000/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewFormData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .then((reviewFormData) => onAddReview(reviewFormData));
     setReviewFormData(initialFormState);
   }
 
   function handleChange(e) {
-    const name = e.target.name;
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setReviewFormData({ ...reviewFormData, [name]: value });
+    const { name, type, checked, value } = e.target;
+
+    if (type === "checkbox") {
+      const tags = [...reviewFormData.tags];
+
+      if (checked) {
+        tags.push(name);
+      } else {
+        const index = tags.indexOf(name);
+        if (index > -1) {
+          tags.splice(index, 1);
+        }
+      }
+
+      setReviewFormData({ ...reviewFormData, tags });
+    } else if (type === "radio") {
+      setReviewFormData({ ...reviewFormData, [name]: parseInt(value, 10) });
+    } else {
+      setReviewFormData({ ...reviewFormData, [name]: value });
+    }
   }
 
   const { review, tags, rating } = reviewFormData;
-  const checkbox = useCheckboxStore({ defaultValue: [] });
+  const checkbox = useCheckboxStore({ defaultValue: tags });
 
   return (
     <div>
@@ -41,7 +68,7 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
+              checked={tags.includes("bad writing")}
               name="bad writing"
               className="checkbox"
               onChange={handleChange}
@@ -51,8 +78,8 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
-              name="tags"
+              checked={tags.includes("main character gave me the ick")}
+              name="main character gave me the ick"
               className="checkbox"
               onChange={handleChange}
             />
@@ -61,14 +88,36 @@ export default function AddReviewForm() {
           <label className="label">
             <Checkbox
               store={checkbox}
-              checked={tags}
-              name="tags"
+              checked={tags.includes("boring")}
+              name="boring"
               className="checkbox"
               onChange={handleChange}
             />
             boring
           </label>
         </Group>
+        <div className="star-rating">
+          {[...Array(5)].map((star, index) => {
+            index += 1;
+            return (
+              <Label key={index}>
+                <Input
+                  type="radio"
+                  name="rating"
+                  checked={index === rating}
+                  value={index}
+                  onChange={handleChange}
+                />
+                <FaPoop
+                  size={25}
+                  className={index <= (hover || rating) ? "on" : "off"}
+                  onMouseEnter={() => setHover(index)}
+                  onMouseLeave={() => setHover(rating)}
+                />
+              </Label>
+            );
+          })}
+        </div>
         <StyledButton type="submit" disabled={!review}>
           Submit Review
         </StyledButton>
@@ -133,4 +182,22 @@ const StyledButton = styled.button`
     box-shadow: none;
     transform: translateY(0);
   }
+`;
+
+const Label = styled.label`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  .on {
+    color: #81665c;
+  }
+  .off {
+    color: #ccc;
+  }
+`;
+
+const Input = styled.input`
+  display: none;
 `;
