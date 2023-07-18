@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from "styled-components";
 import AvailableBookItem from './AvailableBookItem';
+import { Link } from 'react-router-dom';
 
 export default function AboutBookCard({ book }) {
   console.log(book);
@@ -15,36 +16,38 @@ export default function AboutBookCard({ book }) {
   overflow: hidden;
 `;
 
-const Separator = styled.span`
-   display: flex;
+const Container = styled.div`
+   display: grid-column;
   flex-wrap: wrap;
   align-content: center;
-  row-gap: 10px;
-`;
-const BookImage = styled.img`
-width: 15%;
-  height: 15%;  
   `;
+
   const Card = styled.div`
    margin: auto; 
    width: 25%;  
   height: 20%;
   `;
+const Button = styled.button`
+margin: 2px;
+background: #9BE8D8;
+font-weight: bold;
+border-radius: 15%;
+border: 2px solid black;
+padding: 1px;`
 
   return (
     <div>
 
-   <Separator>
+   <Container>
    <Card>
       <h2>{book.volumeInfo.title}</h2>
       <h3>Published: {book.volumeInfo.publishedDate} </h3>
      
       <AvailableBookItem book={book} id={book.id}/>
-      {/* <BookImage src={book.volumeInfo.imageLinks.smallThumbnail}/> */}
+     <Link to="/account/:id"><Button>Write a Review</Button></Link>
     <br/>
-      <p>{book.volumeInfo.description}</p>
-      </Card>
-      </Separator>
+            </Card>
+      </Container>
      
     </div>
   )
