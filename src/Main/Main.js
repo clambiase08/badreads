@@ -8,13 +8,13 @@ import Home from '../Home';
 
 export default function Main() {
   const [books, setBooks] = useState([]);
-  const key = 'AIzaSyAkjPer_Cb-OAsgHXPMbRH6I88BGgpQSWg'
+  const key = 'AIzaSyDWgDh6pDGLCTPmZgiBiIGEH4JhTDPnRKc'
   useEffect(() => {
     fetch(`https://www.googleapis.com/books/v1/users/106307065284722752536/bookshelves/0/volumes?key=${key}
     `)
     .then((res) => res.json())
     .then((BookItem) => setBooks(BookItem.items))
-  }, [])
+  }, key)
 
  // console.log(books);
 
