@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
-import StarRating from "./StarRating";
+import { FaPoop } from "react-icons/fa";
 
 export default function AddReviewForm() {
   const initialFormState = {
@@ -10,6 +10,8 @@ export default function AddReviewForm() {
     rating: "",
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
+  // const [newRating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -70,7 +72,28 @@ export default function AddReviewForm() {
             boring
           </label>
         </Group>
-        <StarRating />
+        <div className="star-rating">
+          {[...Array(5)].map((star, index) => {
+            index += 1;
+            return (
+              <Label key={index}>
+                <Input
+                  type="radio"
+                  name="rating"
+                  checked={index === rating}
+                  value={index}
+                  onClick={handleChange}
+                />
+                <FaPoop
+                  size={25}
+                  className={index <= (hover || rating) ? "on" : "off"}
+                  onMouseEnter={() => setHover(index)}
+                  onMouseLeave={() => setHover(rating)}
+                />
+              </Label>
+            );
+          })}
+        </div>
         <StyledButton type="submit" disabled={!review}>
           Submit Review
         </StyledButton>
@@ -135,4 +158,22 @@ const StyledButton = styled.button`
     box-shadow: none;
     transform: translateY(0);
   }
+`;
+
+const Label = styled.label`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  .on {
+    color: #81665c;
+  }
+  .off {
+    color: #ccc;
+  }
+`;
+
+const Input = styled.input`
+  display: none;
 `;
