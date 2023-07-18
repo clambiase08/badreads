@@ -14,7 +14,7 @@ export default function AddReview({ books, addReview }) {
   return (
     <div>
       <img src={bookToReview.volumeInfo.imageLinks.thumbnail} />
-      <AddReviewForm book={bookToReview} onAddReview={addReview} />
+      <AddReviewForm onAddReview={addReview} />
     </div>
   );
 }
