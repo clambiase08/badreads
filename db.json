@@ -5,50 +5,10 @@
       "tags": [
         "bad writing"
       ],
-      "rating": 3,
-      "id": "7E2S28n"
-    },
-    {
-      "review": "testing",
-      "tags": [
-        "bad writing"
-      ],
-      "rating": 3,
-      "id": "T_c7WhW"
-    },
-    {
-      "review": "testing",
-      "tags": [
-        "bad writing"
-      ],
-      "rating": 3,
-      "id": "5h48akT"
-    },
-    {
-      "review": "try again",
-      "tags": [
-        "main character gave me the ick"
-      ],
-      "rating": 4,
-      "id": "xWmrwk9"
-    },
-    {
-      "review": "this smells like poopy",
-      "tags": [
-        "bad writing"
-      ],
-      "rating": 3,
-      "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "id": "dz9v1Kq"
-    },
-    {
-      "review": "smells bad",
-      "tags": [
-        "bad writing"
-      ],
-      "rating": 1,
-      "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "id": "vbHwgnF"
+      "rating": 2,
+      "image": "http://books.google.com/books/content?id=27H-sgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "Grey",
+      "id": "Wc7g1y0"
     }
   ]
 }

@@ -26,6 +26,7 @@ padding-left: 30px;
       <AddReviewForm
         // onAddReview={addReview}
         image={bookToReview.volumeInfo.imageLinks.thumbnail}
+        title={bookToReview.volumeInfo.title}
       />
     </Container>
   );
