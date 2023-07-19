@@ -8,6 +8,7 @@ export default function Account() {
 
   return (
     <Container>
+      <h1>Hi there, Christina.</h1>
       <ReviwedBookRow/>
       <AvailableBookRow />
       <MyReviews />
@@ -18,4 +19,11 @@ export default function Account() {
     text-align: center;
     margin: 0 auto;
     background-color: rgba(237, 237, 245, 1);
+
+    >h1 {
+      font-size: 48px;
+      padding-bottom: 75px;
+      padding-top: 20px;
+      font-weight: 300;
+    }
   `;

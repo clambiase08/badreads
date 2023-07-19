@@ -22,12 +22,12 @@ export default function AvailableBookRow() {
     margin: 0 auto;
     justify-content: flex-start;
   `;
-   const Title = styled.div`
-   margin: 10px;
-   font-size: 15px;
-   font-weight: bold;
-   padding: 5px;
- `;
+  const Title = styled.div`
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 300;
+    padding: 5px;
+  `;
   return (
     <>
       <Title>-Choose a Book to Review-</Title>

@@ -20,8 +20,8 @@ export default function ReviewedBookRow() {
   `;
   const Title = styled.div`
     margin: 10px;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 300;
     padding: 5px;
   `;
   return (

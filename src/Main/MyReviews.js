@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import Review from './Review';
+import React, { useContext } from "react";
+import Review from "./Review";
 import styled from "styled-components";
 import { AppContext } from "../context/ContextProvider";
 
 const StyledDiv = styled.div`
-  text-align: center; 
+  text-align: center;
+  padding-bottom: 10px;
 `;
 const StyledSpan = styled.span`
   color: gray;
@@ -12,12 +13,12 @@ const StyledSpan = styled.span`
   margin-top: 10px;
 `;
 const StyledH1 = styled.h1`
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 300;
   padding: 5px;
 `;
 const Header = styled.header`
-  padding: 100px;
+  padding: 75px;
 `;
 
 export default function MyReviews() {
