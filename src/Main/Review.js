@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const ReviewContainer = styled.div`
 width: 80%;
-border: 2px dotted black;
-background: ${(props) => (props.index % 2 === 0 ? "#FCF5EA" : "white")};
-margin: 10px auto;
+border-radius: 2%.5;
+background: ${(props) => (props.index % 2 === 0 ? "rgba(252, 245, 234, 1)" : "rgba(246, 247, 212, 1)")};
+margin: 15px auto;
 display: flex;
 padding: 10px;
   overflow: auto; /* Enable text wrapping */
@@ -24,13 +24,13 @@ const Image = styled.img`
 width: 40%;
 `;
 
-export default function Review({ reviewItem }) {
+export default function Review({ reviewItem, index }) {
   const { id, title, review, tags, rating, image } = reviewItem;
 
 
 
   return (
-    <ReviewContainer index={id}>
+    <ReviewContainer index={index}>
       <ImageContainer>
         <Image src={image} alt="Review" />
       </ImageContainer>

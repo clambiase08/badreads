@@ -17,4 +17,5 @@ export default function Account() {
   const Container = styled.div`
     text-align: center;
     margin: 0 auto;
+    background-color: rgba(237, 237, 245, 1);
   `;

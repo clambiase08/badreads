@@ -15,17 +15,17 @@ export default function AvailableBookItem({ book, id }) {
     }
   `;
 
-const BookTitle = styled.h3`
-  font-weight: bold;
-  font-size: 10px;
-  margin-top: 5px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  text-overflow: ellipsis;
-`;
+  const BookTitle = styled.h3`
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    text-overflow: ellipsis;
+  `;
 
-  const BookImage = styled.img`   
+  const BookImage = styled.img`
     height: auto;
   `;
 
@@ -51,13 +51,22 @@ const BookTitle = styled.h3`
     }
   `;
 
+  // Function to truncate the description to 25 words
+  const truncateDescription = (description, wordLimit) => {
+    const words = description.split(' ');
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(' ') + '...';
+    }
+    return description;
+  };
+
   return (
     <BookItem>
       <BookLink to={`/account/${id}`}>
         <BookTitle>{book.volumeInfo.title}</BookTitle>
         <BookImage src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
         <BookDescriptionContainer>
-          <div>{book.volumeInfo.description}</div>
+          <div>{truncateDescription(book.volumeInfo.description, 15)}</div>
         </BookDescriptionContainer>
       </BookLink>
     </BookItem>

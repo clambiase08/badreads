@@ -18,10 +18,16 @@ export default function ReviewedBookRow() {
     margin: 0 auto;
     justify-content: flex-start;
   `;
+  const Title = styled.div`
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+  `;
   return (
-    <Container>
-      <div>-My Reviewed Books-</div>
-      {reviewedBooks}
-    </Container>
+    <>
+      <Title>-My Reviewed Books-</Title>
+      <Container>{reviewedBooks}</Container>
+    </>
   );
 }
