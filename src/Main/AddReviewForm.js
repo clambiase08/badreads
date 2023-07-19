@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 import { FaPoop } from "react-icons/fa";
+import { AppContext } from "../context/ContextProvider";
 
-export default function AddReviewForm({ onAddReview, image }) {
+export default function AddReviewForm({  image }) {
   const initialFormState = {
     review: "",
     tags: [],
@@ -12,6 +13,7 @@ export default function AddReviewForm({ onAddReview, image }) {
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
   const [hover, setHover] = useState(null);
+const {addReview} = useContext(AppContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +25,7 @@ export default function AddReviewForm({ onAddReview, image }) {
     })
       .then((res) => res.json())
       .then((data) => console.log(data))
-      .then((reviewFormData) => onAddReview(reviewFormData));
+      .then((reviewFormData) => addReview(reviewFormData));
     setReviewFormData(initialFormState);
   }
 

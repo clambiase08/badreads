@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Account from "./Account";
-import AddReview from "./AddReview";
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Account from './Account';
+import AddReview from './AddReview';
 
-export default function AccountContainer({ books }) {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/reviews")
-      .then((res) => res.json())
-      .then((reviews) => setReviews(reviews));
-  }, []);
-
-  const addReview = (newReview) => {
-    setReviews([...reviews, newReview]);
-  };
-
+export default function AccountContainer() {
   return (
     <Routes>
-      <Route path="/account" element={<Account books={books} reviews={reviews}/>} />
-      <Route path="/account/:id" element={<AddReview  />} />
+      <Route path="/account/*" element={<Account />} />
+      <Route path="/account/:id" element={<AddReview />} />
     </Routes>
   );
 }

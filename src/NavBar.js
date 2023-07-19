@@ -6,11 +6,13 @@ import styled, { css } from "styled-components";
 export default function NavBar() {
   return (
     <PancakeStackLayout>
-      <Box color="#ECF494" spacing="center">Home of the world's worst books</Box>
+      <Box color="#ECF494" spacing="center">
+        Home of the world's worst books
+      </Box>
       <Box>
         <Logo>Badreads</Logo>
         <NavLinks>
-          <NavLink exact to="/">
+          <NavLink exact="true" to="/">
             Home
           </NavLink>
           <NavLink to="/about">About</NavLink>
@@ -50,7 +52,7 @@ const Box = styled.div`
   background-color: ${(props) => props.color || "#FFFFFF"};
   display: flex;
   align-items: center;
-  justify-content: ${props => props.spacing || "space-between"};
+  justify-content: ${(props) => props.spacing || "space-between"};
   padding: 1rem;
 `;
 
@@ -66,7 +68,6 @@ const NavLinks = styled.div`
   align-items: center;
   /* justify-content: flex-end; */
   gap: 50px;
-
 `;
 
 const UserCircleIcon = styled(HiOutlineUserCircle)`

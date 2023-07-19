@@ -5,7 +5,7 @@ import AvailableBookItem from './AvailableBookItem';
 import { Link } from 'react-router-dom';
 
 export default function AboutBookCard({ book }) {
-  console.log(book);
+
   const CardContainer = styled.div`
   width: 100vw;
   height: 100vh;
