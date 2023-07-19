@@ -25,7 +25,6 @@ export default function AddReviewForm({ image, title }) {
       body: JSON.stringify(reviewFormData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .then((reviewFormData) => addReview(reviewFormData));
     setReviewFormData(initialFormState);
   }

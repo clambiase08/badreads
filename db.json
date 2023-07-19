@@ -9,6 +9,17 @@
       "image": "http://books.google.com/books/content?id=27H-sgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "title": "Grey",
       "id": "Wc7g1y0"
+    },
+    {
+      "review": "this book sucked!",
+      "tags": [
+        "bad writing",
+        "boring"
+      ],
+      "rating": 4,
+      "image": "http://books.google.com/books/content?id=lw99Oii9R90C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Eclipse",
+      "id": "_-RqyHC"
     }
   ]
 }
