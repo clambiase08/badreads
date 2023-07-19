@@ -19,6 +19,7 @@ export default function AvailableBookItem({ book, id }) {
     font-weight: bold;
     font-size: 10px;
     margin-top: 5px;
+    padding-bottom: 15px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
