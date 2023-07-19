@@ -11,20 +11,23 @@ export default function Home() {
       <aside className="left">Your safe space for really bad books</aside>
       <main>
         <ImageWrapper>
-        <Image src={image2} alt="stack of books" />
+        <Image width="150%" src={image2} alt="stack of books" />
         </ImageWrapper>
         <ImageWrapper>
         <Image src={image1} alt="book on table" />
         </ImageWrapper>
       </main>
       <footer>
-        <h4>
+        <span className="left-bubble">
+        <h4 >
           <BsChatRightText /> Your rants, available online
         </h4>
         <p>
           Be honest about your least favorite books and tell us how you really
           feel
         </p>
+        </span>
+        <span className="right-bubble">
         <h4>
           <BsStar /> Creating Space
         </h4>
@@ -32,6 +35,7 @@ export default function Home() {
           Get out those bad feelings with personalized reviews, ratings, and
           attribute tags
         </p>
+        </span>
       </footer>
     </HolyGrailLayout>
   );
@@ -52,31 +56,34 @@ const layoutBox = css`
 
 const HolyGrailLayout = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr auto
+  grid-template-rows: auto 1fr auto;
   ${layoutBox};
+  background: #fbfbde;
 
   .left {
     grid-row: 1;
     grid-column: 1 / 3;
-    background: #fbfbde;
     padding: 1rem;
     font-size: 64px;
-    margin-right: -20px;
+    margin-right: 50px;
+    z-index: 1000;
+    word-wrap: normal;
   }
 
   main {
     grid-row: 1;
-    grid-column: 3 / 3;
+    grid-column: 2 / 4;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background: #fbfbde;
     padding: 1rem;
+    z-index: 900;
+    margin-left: 50px;
   }
 
   footer {
     grid-row: 2;
-    grid-column: 1 / 4;
     background: #fbfbde;
     padding: 1rem;
   }
@@ -95,6 +102,6 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: ${(props) => props.width || "100%"};
   height: auto;
  `;
