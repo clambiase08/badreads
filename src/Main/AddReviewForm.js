@@ -165,8 +165,7 @@ const StyledButton = styled.button`
   background: linear-gradient(to bottom, black 5%, gray 100%);
   background-color: black;
   border-radius: 15px;
-  border-radius: 15px;
-  box-sizing: border-box;
+   box-sizing: border-box;
   color: #fcf5ea;
   text-shadow: 0px 1px 0px #fcf5ea;
   cursor: pointer;
@@ -206,10 +205,10 @@ const Label = styled.label`
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 5px; /* Add padding to create space between icons */
-  display: inline-flex; /* Change display to inline-flex */
-  align-items: center; /* Align icons vertically */
-  margin: 15px; /* Add margin to create space between icons */
+  padding: 5px; 
+  display: inline-flex; 
+  align-items: center; 
+  margin: 15px; 
 
   .on {
     color: #81665c;
