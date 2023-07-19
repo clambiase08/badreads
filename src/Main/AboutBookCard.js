@@ -40,7 +40,7 @@ export default function AboutBookCard({ book }) {
     font-size: 10px;
     font-weight: bold;
     border-radius: 5%;
-    box-shadow: 0px 1px 0px 0px #ecf494;
+    box-shadow: 5px 5px #ecf494;
     padding: 5px;
     text-shadow: 0px 1px 0px #ecf494;
   `;
@@ -50,8 +50,6 @@ export default function AboutBookCard({ book }) {
     color: gray;
     padding-bottom: 10px;
   `;
-
-
   return (
     <div>
       <Container>
