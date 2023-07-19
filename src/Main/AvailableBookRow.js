@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext, useRef } from 'react';
 import AvailableBookItem from './AvailableBookItem'
 import { styled } from "styled-components";
+import { AppContext } from "../context/ContextProvider";
 
-export default function AvailableBookRow({books}) {
+export default function AvailableBookRow() {
+  const { books } = useContext(AppContext);
+  const bookRef = useRef();
+
   if (!books || books.length === 0) {
     return <div>No available books.</div>;
   }

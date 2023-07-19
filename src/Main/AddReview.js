@@ -1,10 +1,12 @@
-import React from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import React, {useContext} from "react";
+import { useParams } from "react-router-dom";
 import AddReviewForm from "./AddReviewForm";
+import { AppContext } from "../context/ContextProvider";
 
 export default function AddReview() {
   const { id } = useParams();
-  const books = useOutletContext();
+  const {books} = useContext(AppContext);
+
   console.log(books);
   const bookToReview = books.find((book) => book.id === id);
 
@@ -14,7 +16,7 @@ export default function AddReview() {
 
   return (
     <div>
-      <img src={bookToReview.volumeInfo.imageLinks.thumbnail} />
+      <img src={bookToReview.volumeInfo.imageLinks.thumbnail} alt={bookToReview.volumeInfo.title}/>
       <AddReviewForm
         // onAddReview={addReview}
         image={bookToReview.volumeInfo.imageLinks.thumbnail}

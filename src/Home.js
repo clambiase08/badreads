@@ -105,3 +105,4 @@ const Image = styled.img`
   width: ${(props) => props.width || "100%"};
   height: auto;
  `;
+ 

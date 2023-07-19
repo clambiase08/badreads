@@ -31,6 +31,24 @@
       ],
       "rating": 4,
       "id": "xWmrwk9"
+    },
+    {
+      "review": "this smells like poopy",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 3,
+      "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": "dz9v1Kq"
+    },
+    {
+      "review": "smells bad",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 1,
+      "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": "vbHwgnF"
     }
   ]
 }
