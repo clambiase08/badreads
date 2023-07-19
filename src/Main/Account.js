@@ -4,13 +4,13 @@ import MyReviews from "./MyReviews";
 import ReviwedBookRow from "./ReviwedBookRow";
 import styled from "styled-components";
 
-export default function Account({books, reviews}) {
+export default function Account() {
 
   return (
     <Container>
-      <ReviwedBookRow reviews={reviews} />
-      <AvailableBookRow books={books} />
-      <MyReviews reviews={reviews} />
+      <ReviwedBookRow/>
+      <AvailableBookRow />
+      <MyReviews />
     </Container>
   );
 }
