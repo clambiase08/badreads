@@ -16,7 +16,7 @@ function AppProvider({ children }) {
     setReviews([...reviews, newReview]);
   };
 
-  const key = "AIzaSyDWgDh6pDGLCTPmZgiBiIGEH4JhTDPnRKc";
+  const key = "AIzaSyCv_WmAcvZlEtlfOEiw2V-_CIJxLAFvLuo";
   useEffect(() => {
     fetch(`https://www.googleapis.com/books/v1/users/106307065284722752536/bookshelves/0/volumes?key=${key}
     `)
