@@ -4,7 +4,7 @@ import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 import { FaPoop } from "react-icons/fa";
 import { AppContext } from "../context/ContextProvider";
 
-export default function AddReviewForm({  image }) {
+export default function AddReviewForm({ image }) {
   const initialFormState = {
     review: "",
     tags: [],
@@ -13,7 +13,7 @@ export default function AddReviewForm({  image }) {
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
   const [hover, setHover] = useState(null);
-const {addReview} = useContext(AppContext);
+  const { addReview } = useContext(AppContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -56,7 +56,9 @@ const {addReview} = useContext(AppContext);
   const checkbox = useCheckboxStore({ defaultValue: tags });
 
   return (
-    <div>
+    <StyledContainer>
+      <StyledImage src={image} alt="Product" />
+
       <StyledForm onSubmit={handleSubmit}>
         <StyledInput
           placeholder="Write your review here"
@@ -124,36 +126,49 @@ const {addReview} = useContext(AppContext);
           Submit Review
         </StyledButton>
       </StyledForm>
-    </div>
+    </StyledContainer>
   );
 }
+
+const StyledContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  background-color: #fcf5ea;
+  margin: 50px;
+`;
+
+const StyledImage = styled.img`
+  padding: 5px;
+  width: 250px; 
+  height: 325px;
+  margin-bottom: 100px;
+`;
 
 const StyledForm = styled.form`
   background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
-`;
-
-const StyledLabel = styled.label`
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: black;
+  flex-grow: 0.2;
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 `;
 
 const StyledButton = styled.button`
-  background-color: #ffffff;
-  border: 2px solid #1a1a1a;
+  box-shadow: 0px 1px 0px 0px black;
+  background: linear-gradient(to bottom, black 5%, gray 100%);
+  background-color: black;
+  border-radius: 15px;
   border-radius: 15px;
   box-sizing: border-box;
-  color: black;
+  color: #fcf5ea;
+  text-shadow: 0px 1px 0px #fcf5ea;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -175,11 +190,11 @@ const StyledButton = styled.button`
   &:disabled {
     pointer-events: none;
   }
-
   &:hover {
+    background: linear-gradient(to bottom, #fcf5ea 5%, #fcf5ea 100%);
+    background-color: #fcf5ea;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   }
-
   &:active {
     box-shadow: none;
     transform: translateY(0);
@@ -191,6 +206,10 @@ const Label = styled.label`
   border: none;
   outline: none;
   cursor: pointer;
+  padding: 5px; /* Add padding to create space between icons */
+  display: inline-flex; /* Change display to inline-flex */
+  align-items: center; /* Align icons vertically */
+  margin: 15px; /* Add margin to create space between icons */
 
   .on {
     color: #81665c;
