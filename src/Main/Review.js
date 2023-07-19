@@ -1,47 +1,75 @@
 import React from "react";
 import styled from "styled-components";
+import { FaPoop } from "react-icons/fa";
 
-const ReviewContainer = styled.div`
-width: 80%;
-border-radius: 2%.5;
-background: ${(props) => (props.index % 2 === 0 ? "rgba(252, 245, 234, 1)" : "rgba(246, 247, 212, 1)")};
-margin: 15px auto;
-display: flex;
-padding: 10px;
-  overflow: auto; /* Enable text wrapping */
-`;
-
-const ImageContainer = styled.div`
-flex: 0 0 30%; 
-`;
-
-const TextContainer = styled.div`
-flex: 0 0 70%; 
-padding-left: 10px; 
-`;
-
-const Image = styled.img`
-width: 40%;
-`;
 
 export default function Review({ reviewItem, index }) {
   const { id, title, review, tags, rating, image } = reviewItem;
 
-
-
   return (
     <ReviewContainer index={index}>
       <ImageContainer>
-        <Image src={image} alt="Review" />
+        <Image src={image} alt="book cover" />
       </ImageContainer>
       <TextContainer>
-        <section>
-          <span>{tags}</span>
-          <p>{rating}</p>
-          <h2>{title}</h2>
-          <p>{review}</p>
-        </section>
+        {/* <span>{tags}</span> */}
+        <label>{Array(rating).fill(<FaPoop />)}</label>
+        <p>{review}</p>
+        <h2>- {title}</h2>
       </TextContainer>
     </ReviewContainer>
   );
 }
+
+  const ReviewContainer = styled.div`
+    width: 80%;
+    border-radius: 25px;
+    background: ${(props) => (props.index % 2 === 0 ? "#F6F7D4" : "#FCF5EA")};
+    margin: 15px auto;
+    display: flex;
+    padding: 10px;
+    overflow: auto; /* Enable text wrapping */
+    max-height: 150px;
+  `;
+  
+  const ImageContainer = styled.div`
+    flex: 0 0 30%;
+    margin-left: 10px;
+  `;
+  
+  const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    text-align: left;
+    margin-left: -200px;
+    padding-top: 25px;
+   
+  
+    >label {
+      color: #81665c;
+      display: inline-flex;
+      margin-bottom: 15px;
+    }
+  
+    >label > * {
+      margin-right: 5px;
+    }
+  
+    >p {
+      font-size: 16px;
+      font-weight: 200;
+      margin-bottom: 5px;
+    }
+  
+    >h2 {
+      font-size: 12px;
+    }  
+  `;
+  
+  const Image = styled.img`
+    width: 28%;
+    height: auto;
+    padding: 10px;
+  `;

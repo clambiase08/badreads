@@ -4,12 +4,13 @@ import { Checkbox, Group, GroupLabel, useCheckboxStore } from "@ariakit/react";
 import { FaPoop } from "react-icons/fa";
 import { AppContext } from "../context/ContextProvider";
 
-export default function AddReviewForm({ image }) {
+export default function AddReviewForm({ image, title }) {
   const initialFormState = {
     review: "",
     tags: [],
     rating: null,
     image: image,
+    title: title
   };
   const [reviewFormData, setReviewFormData] = useState(initialFormState);
   const [hover, setHover] = useState(null);
@@ -24,7 +25,6 @@ export default function AddReviewForm({ image }) {
       body: JSON.stringify(reviewFormData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
       .then((reviewFormData) => addReview(reviewFormData));
     setReviewFormData(initialFormState);
   }
