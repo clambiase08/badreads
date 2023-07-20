@@ -6,9 +6,11 @@ export default function AvailableBookItem({ book, id }) {
   const BookItem = styled.div`
     position: relative;
     flex: 0 0 auto;
-    margin-right: 10px;
-    padding: 10px;
+    /* margin-right: 10px; */
+    padding: 20px 40px;
     text-align: center;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     &:hover {
       opacity: 0.8;
@@ -27,10 +29,10 @@ export default function AvailableBookItem({ book, id }) {
   `;
 
   const BookImage = styled.img`
-    height: auto;
-  `;
+    max-height: 175px;
+    `;
 
-  const BookDescriptionContainer = styled.div`
+const BookDescriptionContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -41,9 +43,9 @@ export default function AvailableBookItem({ book, id }) {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-  `;
+    `;
 
-  const BookLink = styled(Link)`
+const BookLink = styled(Link)`
     position: relative;
     display: block;
     &:hover ${BookDescriptionContainer} {

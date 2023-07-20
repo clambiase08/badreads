@@ -25,13 +25,15 @@ export default function AboutBookCard({ book }) {
   const Card = styled.div`
     background-color: white;
     border-radius: 5%;
-    margin: 0 auto;
+    margin: 0 15px;
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 5px;
+    max-width: 220px;
+    max-height: 320px;
   `;
 
   const Button = styled.button`
