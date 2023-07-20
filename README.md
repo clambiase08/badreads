@@ -15,7 +15,10 @@ The following features are planned for future development on the Badreads web ap
 - Sandra Gonzalez
 
 ## Visuals
-_[You may add screenshots or GIFs showcasing the user interface and the various features of the web app.]_
+<img width="1462" alt="Screenshot 2023-07-20 at 2 30 44 PM" src="https://github.com/clambiase08/badreads/assets/126217161/158bc251-0d3a-4fea-9ad5-377446fd4797">
+<img width="1462" alt="Screenshot 2023-07-20 at 2 31 11 PM" src="https://github.com/clambiase08/badreads/assets/126217161/d5481632-08b4-46e8-ac30-1a06fed8f617">
+<img width="1462" alt="Screenshot 2023-07-20 at 2 31 27 PM" src="https://github.com/clambiase08/badreads/assets/126217161/5793ca86-0c4d-42cc-8150-907208449eb5">
+<img width="1462" alt="Screenshot 2023-07-20 at 2 31 59 PM" src="https://github.com/clambiase08/badreads/assets/126217161/845d4862-b910-40e8-a108-829aaf660fa1">
 
 ## Installation
 Badreads is a web-based application, so there is no need for any installation. Users can simply access the web app through their preferred web browser.
