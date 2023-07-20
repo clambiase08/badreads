@@ -17,7 +17,7 @@ export default function NavBar() {
           </NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/account">Reviews</NavLink>
+          <NavLink to="/account#reviews">Reviews</NavLink>
           <NavLink to="/account">
             <UserCircleIcon />
           </NavLink>

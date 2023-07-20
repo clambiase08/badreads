@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect} from "react";
 import styled from "styled-components";
 import { FaPoop } from "react-icons/fa";
-
+import { useLocation } from 'react-router-dom';
 
 export default function Review({ reviewItem, index }) {
   const { id, title, review, tags, rating, image } = reviewItem;
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
-    <ReviewContainer index={index}>
+    <ReviewContainer index={index} id="reviews">
       <ImageContainer>
         <Image src={image} alt="book cover" />
       </ImageContainer>
