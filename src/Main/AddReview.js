@@ -14,20 +14,20 @@ export default function AddReview() {
   if (!bookToReview) {
     return <div>...Loading</div>;
   }
-const Container = styled.div`
-background: #FCF5EA;
-padding-top: 50px;
-padding-left: 30px;
-`;
-
+  
   return (
     <Container>
-      <img src={bookToReview.volumeInfo.imageLinks.thumbnail} alt={bookToReview.volumeInfo.title}/>
+      {/* <img src={bookToReview.volumeInfo.imageLinks.thumbnail} alt={bookToReview.volumeInfo.title}/> */}
       <AddReviewForm
-        // onAddReview={addReview}
         image={bookToReview.volumeInfo.imageLinks.thumbnail}
         title={bookToReview.volumeInfo.title}
       />
     </Container>
   );
 }
+    const Container = styled.div`
+    background-color: #F4EDF5;
+    padding-top: 50px;
+    padding-left: 30px;
+    min-height: 650px;
+    `;

@@ -20,6 +20,14 @@
       "image": "http://books.google.com/books/content?id=lw99Oii9R90C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "title": "Eclipse",
       "id": "_-RqyHC"
+    },
+    {
+      "review": "Trying out a very very very very very very very very very very very very very very very very very very very very long review",
+      "tags": [],
+      "rating": 5,
+      "image": "http://books.google.com/books/content?id=27H-sgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "Grey",
+      "id": "yxzO1x0"
     }
   ]
 }

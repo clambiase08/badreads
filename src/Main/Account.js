@@ -18,7 +18,7 @@ export default function Account() {
   const Container = styled.div`
     text-align: center;
     margin: 0 auto;
-    background-color: rgba(237, 237, 245, 1);
+    background-color: #F4EDF5;
 
     >h1 {
       font-size: 48px;
