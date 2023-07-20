@@ -1,33 +1,56 @@
 {
   "reviews": [
     {
-      "review": "testing",
+      "review": "Ms. Roth is indeed dauntless. I know it is her story and she can tell it the way she wanted; I wish she showed a bit of more of abnegation and provided a final book that did not make me want to regret reading the whole series. No movies for me.",
       "tags": [
         "bad writing"
       ],
-      "rating": 2,
-      "image": "http://books.google.com/books/content?id=27H-sgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "title": "Grey",
-      "id": "Wc7g1y0"
+      "rating": 4,
+      "image": "http://books.google.com/books/content?id=qttqrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "Allegiant",
+      "id": "tGhfUhv"
     },
     {
-      "review": "this book sucked!",
+      "review": "Incredibly predictable, highly overrated and full of characters and ridiculous moments I disliked.",
+      "tags": [
+        "main character gave me the ick"
+      ],
+      "rating": 2,
+      "image": "http://books.google.com/books/content?id=wmnuDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "It Ends with Us",
+      "id": "Kj-6lR5"
+    },
+    {
+      "review": "From a business perspective, I applaud the decision to release a version of a book that has already been published that is largely the same as the book that has already been published.  From any other perspective, this book is a travesty.  The writing is terrible, just fundamentally terrible. Christian Grey is boring and he cannot even be bothered to be tortured in an interesting way.  Mad at myself for PAYING for this and then reading it even though I knew what it was going to be, having read the original trilogy a time or three. I am part of the problem.",
       "tags": [
         "bad writing",
+        "main character gave me the ick",
         "boring"
       ],
-      "rating": 4,
-      "image": "http://books.google.com/books/content?id=lw99Oii9R90C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "title": "Eclipse",
-      "id": "_-RqyHC"
-    },
-    {
-      "review": "Trying out a very very very very very very very very very very very very very very very very very very very very long review",
-      "tags": [],
       "rating": 5,
       "image": "http://books.google.com/books/content?id=27H-sgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "title": "Grey",
-      "id": "yxzO1x0"
+      "id": "Uc0adty"
+    },
+    {
+      "review": "*vomits aggressively*",
+      "tags": [
+        "bad writing"
+      ],
+      "rating": 1,
+      "image": "http://books.google.com/books/content?id=ZfjzX7M8zt0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Twilight",
+      "id": "jDf8T0t"
+    },
+    {
+      "review": "I purchased this book because I enjoyed THE GREAT ALONE. Unfortunately the writing of this book was not of the same caliber. In fact, I doubt I will ever buy another book by this author. The idea of discovering a child who has grown up in the woods was interesting but the author could not carry it off. Plus the love story (which wasn't needed) was too unrealistic. Save your money for a better book.",
+      "tags": [
+        "boring"
+      ],
+      "rating": 3,
+      "image": "http://books.google.com/books/content?id=mC7gkAtRC6sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Magic Hour",
+      "id": "c_Bkcbm"
     }
   ]
 }
