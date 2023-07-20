@@ -8,7 +8,7 @@ export default function AboutBookRow() {
 
   //console.log(books);
   const Container = styled.div`
-    background-color: rgba(252, 245, 234, 1);
+    background-color: #F6F7D4;
     display: flex;
     overflow-x: auto;
     width: 80%;

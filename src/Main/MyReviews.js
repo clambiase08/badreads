@@ -3,6 +3,7 @@ import Review from "./Review";
 import styled from "styled-components";
 import { AppContext } from "../context/ContextProvider";
 
+
 const StyledDiv = styled.div`
   text-align: center;
   padding-bottom: 10px;
@@ -25,7 +26,7 @@ export default function MyReviews() {
   const { reviews } = useContext(AppContext);
 
   return (
-    <StyledDiv>
+    <StyledDiv >
       <Header>
         <StyledSpan>#READERS TELL READERS</StyledSpan>
         <StyledH1>Your Shittiest reviews</StyledH1>
