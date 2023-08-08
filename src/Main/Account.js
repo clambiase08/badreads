@@ -8,7 +8,7 @@ export default function Account() {
 
   return (
     <Container>
-      <h1>Hi there, Christina.</h1>
+      <h1>Hi there, Sandra.</h1>
       <ReviwedBookRow/>
       <AvailableBookRow />
       <MyReviews />
